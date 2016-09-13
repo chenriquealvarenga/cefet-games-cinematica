@@ -2,7 +2,7 @@ package br.cefetmg.games.movement.behavior;
 
 import br.cefetmg.games.movement.Direcionamento;
 import br.cefetmg.games.movement.Pose;
-
+        
 /**
  *
  * @author Flávio Coutinho <fegemo@gmail.com>
@@ -52,7 +52,8 @@ public class Vagar extends Algoritmo {
         //    de 0 (tipo uma curva normal com o centro em 0).
         //    Ela pode ser útil para se encontrar uma velocidade angular 
         //    (output.angular).
-        
+        output.rotacao = randomBinomial() * maxAngular;
+        output.velocidade = agente.getOrientacaoComoVetor().scl(this.maxVelocidade);
         return output;
     }
 
